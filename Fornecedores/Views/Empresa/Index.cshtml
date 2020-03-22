@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Fornecedores.Models.EmpresaModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Listagem de Empresas</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdEmpresa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Uf)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeFantasia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cnpj)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdEmpresa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Uf)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeFantasia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cnpj)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "AtualizarEmpresa", new {id = item.IdEmpresa}) |
+                @Html.ActionLink("Details", "DetalharEmpresa", new { id=item.IdEmpresa }) |
+                @Html.ActionLink("Apagar", "DeletarEmpresa", new { id = item.IdEmpresa })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

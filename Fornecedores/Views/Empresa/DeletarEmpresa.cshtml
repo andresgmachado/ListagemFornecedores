@@ -1,0 +1,44 @@
+﻿@model Fornecedores.Models.EmpresaModel
+
+@{
+    ViewData["Title"] = "DeletarEmpresa";
+}
+
+<h1>Deletar Empresa</h1>
+
+<h3>Você tem certeza que deseja deletar?</h3>
+<div>
+    <h4>Excluir Empresa</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IdEmpresa)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdEmpresa)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Uf)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Uf)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NomeFantasia)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NomeFantasia)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Cnpj)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Cnpj)
+        </dd>
+    </dl>
+    
+    <form asp-action="DeletarEmpresa">
+        <input type="submit" value="Deletar Empresa" class="btn btn-danger" /> |
+        <a asp-action="Index">Voltar Para Listagem</a>
+    </form>
+</div>
